@@ -1,0 +1,37 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        dummyHead = ListNode(0)
+        curr = dummyHead
+        carry = 0
+        while l1 != None or l2 != None or carry != 0:
+            l1Val = l1.val if l1 else 0
+            l2Val = l2.val if l2 else 0
+            columnSum = l1Val + l2Val + carry
+            carry = columnSum // 10
+            newNode = ListNode(columnSum % 10)
+            curr.next = newNode
+            curr = newNode
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+        return dummyHead.next
+
+
+
+
+
+ManaKi pending:
+1. pattern Programs
+2.Sql(concept wise revising)
+3.ds(concept wise revising)
+4.Hr questions(daily one question) 
+5.Tr questions(daily 10 questions SQL,py,ds)
+6.google meeet(discussion session)
+
+mng nak:
+6:30 to 7:30------------> 1hr
+6-7-8------------------->2hr
+9:30 to 10:30----------->1hr
